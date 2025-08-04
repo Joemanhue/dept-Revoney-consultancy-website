@@ -88,6 +88,7 @@ main{
 
 section{
     height: 100svh;
+    position: relative;
 
 }
 
@@ -174,6 +175,7 @@ main{
     font-family: "Lato", sans-serif;
     font-weight: 100;
     font-style: normal;
+    position: relative;
 
     >div{
         border: 2px soli;
@@ -739,6 +741,7 @@ main{
         width: 100%;
         height: 100%;
         
+        
 
         >path:nth-child(1){
             transform-origin: center;
@@ -1149,9 +1152,13 @@ footer {
 }
 
 @media only screen and (max-width:500px){
+    *{
+        outline: 1px soli;
+    }
 
     main{
-        overflow-y: hidden;
+        overflow-y: hidde;
+       
     }
 
 
@@ -1163,23 +1170,22 @@ footer {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-betwee;
     flex-wrap: wrap;
 
     position: fixed;
     top: 0;
     width: 100%;
-    height: fit-content;
+    height: 6svh;
 
     padding: 3% 5%;
+    padding-inline-start: 2%;
 
     background: rgba(255, 255, 255, 0.705);
 
     z-index: 1000;
 
-    font-family: "Sansation", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+
 
     overflow: hidden;
     animation: move-in 0.5s;
@@ -1187,9 +1193,12 @@ footer {
     -webkit-backdrop-filter: blur(0px);
     transition: padding 0.2s
     ,backdrop-filter 1s
-    ,-webkit-backdrop-filter 1s;
+    ,-webkit-backdrop-filter 1s
+    ,height 0.3s;
 
     >h1{
+        align-items: flex-start;
+
         margin-left: 1.5%;
         color: rgb(85, 60, 14);
         font-size: 5vw;
@@ -1197,9 +1206,10 @@ footer {
     }
 
     >nav{
-       
+        
         border: 2px soli;
-        margin-right: 0%;
+        margin: 0;
+        
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -1212,39 +1222,114 @@ footer {
 
 /* menu button */
 #menu{
-    border: 2px solid;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    outline: 2px soli;
+    width: 30px;
+    height: 30px;
+    scale: 0.9;
+
+    > a{
+        position: absolute;
+        transition: opacity 0.2s;
+
+    }
+
+    & div{
+        scale: 1 0.8;
+        background-color: rgb(85, 60, 14);
+
+    }
+  
+}
+
+#menu-open{
+    border: 2px soli;
     width: fit-content;
     height: fit-content;
     display: block;
-    margin-right: 2%;
+    
+    z-index: 1;
+    opacity: 1;
 
-    & #open-btn div{
+    & div{
         border: 0px soli;
         width: 25px;
         height: 4px;
         border-radius: 100px;
-        background-color: black;
+
 
         margin-block: 3px;
 
-        transition: transform 0.3s ,width 0.2s ,height 0.2s,margin 0.1s;
+
     }
 
+
+}
+
+#menu-close{
+    border: 2px soli;
+    width: fit-content;
+    height: fit-content;
+    display: block;
+
+    z-index: 0;
+    opacity: 0;
+    padding: 10px 0px;
+
+
+    & div{
+        border: 0px soli;
+        width: 25px;
+        height: 4px;
+        border-radius: 100px;
+        
+       
+
+       
+    }
+
+    & div:nth-child(1){
+        rotate: 45deg;
+    }
+    & div:nth-child(2){
+        rotate: 0deg;
+        width: 0;
+        height: 0;
+        margin-block: -4px;
+    }
+    & div:nth-child(3){
+        rotate: -45deg;
+    }
 
 }
 
 
 
 
-header:has(#nav:target){
-    padding: 10%;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 
+header:has(#nav:target){
+    padding: 10% 10%;
+    padding-block-end: 50%;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    height: 100svh;
     & nav ul{
         height: 40svh;
         padding: 5%;
         padding-top: 10%;
+    }
+
+    & #menu-close{
+        z-index: 1;
+        opacity: 1;
+    }
+    & #menu-open{
+        z-index: 0;
+        opacity: 0;
     }
 
     
@@ -1257,14 +1342,13 @@ nav ul{
     height: 0svh;
     padding: 0%;
 
+   
 
     overflow: hidden;
 
     display: flex;
-    list-style-type: none;
-    display: flex;
     justify-content: space-between;
-    align-items:flex-start;
+    align-items:center;
 
     flex-direction: column;
 
@@ -1273,22 +1357,22 @@ nav ul{
     text-align: center;
     transition:height 0.3s
     ,padding 0.3s;
+    
     >li{
         border: 1px soli;
+        width: fit-content;
+        height: fit-content;
+
     }
     
 }
 
 nav a{
-    font-size: 3vw;
+    font-size: 5vw;
     text-decoration: none;
     color: rgb(85, 60, 14);
 }
 
-main{
-    border: 2px soli;
-    height: fit-content;
-}
 
 
 nav ul{
@@ -1306,17 +1390,23 @@ nav ul{
 
     & .links a{
         display: flex;
-        justify-content: start;
+        justify-content: center;
+        align-items: center;
+
         text-wrap: nowrap;
-        border-right: 1px solid;
-        border-bottom: 1px solid;
+       
+        border: 0px solid;
+
         border-color: rgba(0, 0, 0, 0.452);
+
+
         color: rgba(0, 0, 0, 0.849);
         width: 100%;
-        padding: 5%;
+        padding: 0%;
         padding-top: 0px;
         transition: width 0.3s ease-in-out , 
         padding-left 0.3s ease-in-out;
+        
     }
 
     & .links:hover a{
@@ -1334,6 +1424,7 @@ nav ul{
     color: white;
     padding: 10px 20px;
     margin-left: 0%;
+  
     text-wrap: nowrap;
     border-radius: 5px;
     text-decoration: none;
@@ -1805,8 +1896,8 @@ nav ul{
     height: 90svh;
     position:relative;
     z-index:1;
-    overflow-y: visible;
-    
+    overflow: hidden;
+
     & svg{
         justify-self: center;
         position: absolute;
@@ -1816,6 +1907,7 @@ nav ul{
         z-index: -1;
         width: 100%;
         height: 100%;
+        padding:0;
         
     }
 }
@@ -1916,6 +2008,30 @@ nav ul{
 
 
 }
+
+.contact-ani1{
+    opacity:0;
+    translate: -50px -50px;
+    transition: opacity 1s 
+    ,translate 1s;
+}
+
+.contact-ani1.visible{
+    opacity:1;
+    translate: 0;
+}
+
+.contact-ani2{
+    opacity:0;
+
+    transition: opacity 1s;
+}
+
+.contact-ani2.visible{
+    opacity:1;
+    
+}
+
 
 
 /* 
