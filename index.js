@@ -1,10 +1,11 @@
-const elements = document.querySelectorAll('.fade-in , .fade-whu ,.fade-faq ,.contact-ani1 ,.contact-ani2');
+const elements = document.querySelectorAll('.fade-in , .fade-whu ,.fade-faq ,.contact-ani1 ,.contact-ani2 , .service-list');
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       }
+
 
     });
   });
