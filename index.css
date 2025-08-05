@@ -1251,10 +1251,11 @@ footer {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 6svh;
+    height: 0;
 
     padding: 3% 5%;
     padding-inline-start: 2%;
+    padding-block-end: 10%;
 
     background: rgba(255, 255, 255, 0.705);
 
@@ -1752,10 +1753,172 @@ nav ul{
 
 
 /*   Services section */
+
+
 #services{
-    display: none;
+    background: url(images/pexels-mikhail-nilov-7731373.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    padding-block: 10% 15%;
+    position: relative;
+    z-index: 2;
+    outline: 1px soli;
+
+
+    >h2{
+        font-size: 3vw;
+        margin-bottom: 2%;
+        z-index: 2;
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+    }
 }
 
+
+#services ol{
+    z-index: 2;
+    
+    outline:2px soli;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    & strong{
+        font-size: 3vw;
+        font-weight: 500;
+    }
+
+    & p{
+        display: inline-block;
+        font-size: 2vw;
+        font-weight: 300;
+    }
+
+    & img{
+        display: inline-block;
+        width: 200px;
+    }
+
+}
+
+#services li{
+    border: 2px soli;
+    width: 70%;
+    height: fit-content;
+    margin-block: 4%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+
+
+    >img{
+        display: inline-block;
+        width: 410px;
+        height: 300px;
+        border-radius: 20px;
+        object-fit: cover;
+        
+    }
+
+}
+
+
+.service-list{
+    width: 0%;
+    opacity: 0;
+    height: 0;
+    transition: width 0.6s 
+    ,height 1s,opacity 1s,padding 1s
+    ,padding 1s;
+    
+    outline: 2px soli;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.service-list.visible{
+    width: 50%;
+    opacity: 1;
+    padding: 0% 2%;
+    height: 300px;
+}
+
+
+#services ol li:nth-child(1){
+    flex-direction: row;
+  
+}
+#services ol li:nth-child(2){
+    flex-direction: row-reverse;
+   
+  
+}
+#services ol li:nth-child(3){
+    
+  flex-direction: row;
+}
+#services ol li:nth-child(4){
+    
+ flex-direction: row-reverse;
+}
+#services ol li:nth-child(5){
+    
+    flex-direction: row;
+}
+#services ol li:nth-child(6){
+    
+  flex-direction: row-reverse;
+}
+
+#services button{
+
+    margin-top: 5%;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: background 0.3s;
+
+    &:hover{
+        background: var(--accent-blue);
+    }
+}
+
+
+.filter-s{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( rgb(255, 255, 255) 10%,rgba(255, 255, 255, 0.808) 20%);
+    z-index: 0;
+} 
+
+#services{
+    display: none;
+
+
+}
 
 /* Why choose us section */
 
