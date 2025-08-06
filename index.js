@@ -1,4 +1,4 @@
-const elements = document.querySelectorAll('.fade-in , .fade-whu ,.fade-faq ,.contact-ani1 ,.contact-ani2 , .service-list');
+const elements = document.querySelectorAll('.fade-in , .fade-whu ,.fade-faq ,.contact-ani1 ,.contact-ani2 , .service-list ,.items');
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
